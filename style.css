@@ -26,7 +26,8 @@ header {
 	width:100vw;
 	background-color:  #eaeced /*#0146ad; /* #0059b3; */;
 	position:fixed;
-
+	padding-left:30px;
+	padding-right:30px;
 	height: 160px;
 	z-index: 1;
 	color: #254b61;
@@ -64,8 +65,21 @@ footer {
 	text-align: center;
 }
 
+#media-td{
+	width: 100%;
+	text-align: right;
+	font-family: 'Mitr';
+	font-weight:300;
+}
+#social-icons{
+	font-size: 0.6em;
+}
+#telephone-icon{
+	font-size: 1.3em;
+}
+
 header > table {
-	margin-left: 80px;
+	margin-left: 20px;
 }
 
 h1 {
