@@ -15,9 +15,11 @@
 
 			function start_slides(){
 				var all_slides = document.getElementsByTagName("section");
+				var h2 = document.getElementsByTagName("h2")[0];
 				for(var i = 0; i < all_slides.length; i++){
 					set_collapsed(all_slides[i], true);
 				}
+				h2.className += " gloom";
 				set_collapsed(all_slides[0],false);
 			}
 
@@ -91,12 +93,12 @@
 		<main>
 			<div class="overflow-container">
 				<section id="sect1">
-						<h2>Promover aos nossos clientes <br>foco na redução de custos 	<br>tributários e ganho de eficiência.</h2>
-						<p>Diferencial Tributária</p>
+					<h2><span>Promover aos nossos clientes</span> <br><span>foco na redução de custos</span><br><span>tributários e ganho de eficiência.</span></h2>
+					<span class="citation-author">— Diferencial Tributária</span>
 
-						<p> A Diferencial Tributária, fundada no início do ano de 2015, foi criada em função da necessidade identificada no mercado advinda da falta de atendimento às empresas de pequeno e médio porte, inclusive atuantes no comércio atacadista e varejista, pela maioria das grandes consultorias do mercado.</p>
+					<p> A Diferencial Tributária, fundada no início do ano de 2015, foi criada em função da necessidade identificada no mercado advinda da falta de atendimento às empresas de pequeno e médio porte, inclusive atuantes no comércio atacadista e varejista, pela maioria das grandes consultorias do mercado.</p>
 
-					    <p>A empresa surgiu através da parceria formada entre dois profissionais com larga experiência no mercado de auditoria independente e consultoria tributária, possuindo vivência em mais de 15 anos nos mais variados segmentos empresariais ligadas a questões contábeis, fiscais e tributárias provindos de conceituadas empresas privadas e públicas. A alta complexidade do setor tributário no Brasil e a carência no atendimento a empresas de menor porte, acrescidas da larga experiência acumulada ao longo dos anos de todos os seus integrantes, motivou a criação da Diferencial Tributária proporcionando a nossos clientes atendimento de forma satisfatória e exclusiva.</p>
+					<p>A empresa surgiu através da parceria formada entre dois profissionais com larga experiência no mercado de auditoria independente e consultoria tributária, possuindo vivência em mais de 15 anos nos mais variados segmentos empresariais ligadas a questões contábeis, fiscais e tributárias provindos de conceituadas empresas privadas e públicas. A alta complexidade do setor tributário no Brasil e a carência no atendimento a empresas de menor porte, acrescidas da larga experiência acumulada ao longo dos anos de todos os seus integrantes, motivou a criação da Diferencial Tributária proporcionando a nossos clientes atendimento de forma satisfatória e exclusiva.</p>
 				</section>
 
 				<section id="sect2">
