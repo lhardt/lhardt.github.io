@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+		<script>
+
+			function set_collapsed(div, bool){
+				div.className = div.className.replace(" collapsed", "");
+				if(bool) {
+					div.className += " collapsed";
+				}
+			}
+
+			function start_slides(){
+				var all_slides = document.getElementsByTagName("section");
+				for(var i = 0; i < all_slides.length; i++){
+					set_collapsed(all_slides[i], true);
+				}
+				set_collapsed(all_slides[0],false);
+			}
+
+			function jump_to_slide(n){
+				var all_slides = document.getElementsByTagName("section");
+				for(var i = 0; i < all_slides.length; i++){
+					set_collapsed(all_slides[i], false);
+				}
+				var cont = document.getElementsByClassName("overflow-container")[0];
+				cont.className = cont.className.replace(" translate", "");
+				cont.className += " translate";
+				cont.style.transform = "translateX(" + -100*n + "vw)";
+				setTimeout(finish_jump, 1000, n);
+			}
+
+			function finish_jump(n){
+				var all_slides = document.getElementsByTagName("section");
+				for(var i = 0; i < all_slides.length; i++){
+					if(i != n){
+						set_collapsed(all_slides[i], true);
+					}
+				}
+				set_collapsed(all_slides[n], false);
+			}
+
+		</script>
+
+	</head>
+	<body onload="start_slides()">
+		<header>
+			<table>
+				<tr>
+					<td><img src="images/logo-no-words.png" /></td>
+					<td><h1>Diferencial Tributária</h1></td>
+					<td>
+
+
+					</td>
+				</tr>
+			</table>
+			<nav>
+					<ul>
+						<li><div onclick="jump_to_slide(0)">Institucional</div></li>
+						<li><div onclick="jump_to_slide(1)">Serviços</div></li>
+						<li><div onclick="jump_to_slide(2)">Depoimetos</div></li>
+						<li><div onclick="jump_to_slide(3)">Clientes</div></li>
+						<li><div onclick="jump_to_slide(4)">Contato</div></li>
+					</ul>
+			</nav>
+
+		</header>
+		<main>
+			<div class="overflow-container">
+				<section id="sect1">
+						<h2>Promover aos nossos clientes <br>foco na redução de custos 	<br>tributários e ganho de eficiência.</h2>
+						<p>Diferencial Tributária</p>
+
+						<p> A Diferencial Tributária, fundada no início do ano de 2015, foi criada em função da necessidade identificada no mercado advinda da falta de atendimento às empresas de pequeno e médio porte, inclusive atuantes no comércio atacadista e varejista, pela maioria das grandes consultorias do mercado.</p>
+
+					    <p>A empresa surgiu através da parceria formada entre dois profissionais com larga experiência no mercado de auditoria independente e consultoria tributária, possuindo vivência em mais de 15 anos nos mais variados segmentos empresariais ligadas a questões contábeis, fiscais e tributárias provindos de conceituadas empresas privadas e públicas. A alta complexidade do setor tributário no Brasil e a carência no atendimento a empresas de menor porte, acrescidas da larga experiência acumulada ao longo dos anos de todos os seus integrantes, motivou a criação da Diferencial Tributária proporcionando a nossos clientes atendimento de forma satisfatória e exclusiva.</p>
+				</section>
+
+				<section id="sect2">
+					<div class="article">
+						<h2>Serviços</h2>
+						<p>Diferencial Tributária</p>
+						<p>artigo longo</p>
+						<p>artigo longo</p>
+						<p>artigo longo</p>
+						<p>artigo longo</p>
+						<p>artigo longo</p>
+						<p>artigo longo</p>
+						<p>artigo longo</p>
+						<p>artigo longo</p>
+						<p>artigo longo</p>
+						<p>artigo longo</p>
+						<p>artigo longo</p>
+						<p>artigo longo</p>
+						<p>artigo longo</p>
+						<p>artigo longo</p>
+						<p>artigo longo</p>
+						<p>artigo longo final</p>
+					</div>
+				</section>
+
+				<section>
+					<div >
+						<h2>Depoimentos</h2>
+						<p>Diferencial Tributária</p>
+					</div>
+				</section>
+
+				<section>
+					<div >
+						<h2>Clientes</h2>
+						<p>Diferencial Tributária</p>
+					</div>
+				</section>
+
+				<section>
+					<div >
+						<h2>Contato</h2>
+						<p>Diferencial Tributária</p>
+					</div>
+				</section>
+
+				<div style="clear:both"></div>
+			</div>
+		</main>
+		<footer>
+			Diff trib
+		</footer>
+	</body>
+</html>

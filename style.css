@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css?family=Mitr:200,300,400&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	display:block;
+	overflow-x:hidden;
+	width: 100vw;
+	background:#142b5b;
+	overflow-y: hidden;
+
+}
+
+header {
+	width:100vw;
+	background-color:  #0146ad; /* #0059b3; */
+	position:fixed;
+
+	height: 160px;
+	z-index: 1;
+}
+
+main {
+	display: block;
+	overflow-x: hidden;
+	overflow-y: scroll;
+
+	width: 100vw;
+	height: 100vh;
+
+	color: white;
+
+
+	padding-top: 160px;
+	padding-bottom: 120px;
+
+	z-index: 0;
+}
+
+footer {
+	border-top: 1px solid #e7ac38;
+	position:fixed;
+	width: 100%;
+	bottom: 0;
+	height: 120px;
+	background: #efefef;
+}
+
+header > table {
+	margin-left: 80px;
+}
+
+h1 {
+	margin: 0;
+	padding: 0;
+	color: white;
+	font-family: 'Mitr';
+	font-weight: 200;
+}
+
+.overflow-container{
+	width:10000px;
+}
+
+
+.translate {
+	transition: transform 1s;
+
+}
+
+.collapsed{
+	height: 0px;
+	overflow-y: hidden;
+}
+
+section {
+	height: auto;
+	overflow-y: auto;
+	float:left;
+	width:100vw;
+	padding:50px;
+	padding-left: 120px;
+	margin-bottom: 120px;
+
+
+}
+section > .article {
+	border-top: 2px solid #e7ac38;
+	background: #e3e3e3;
+	margin: auto;
+	color: black;
+	padding: 20px;
+}
+
+p {
+	font-family: 'Mitr';
+	font-weight: 300;
+	font-style:italic;
+}
+
+h2 {
+	font-family: 'Mitr';
+	font-weight: 200;
+}
+
+nav{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height:30px;
+
+	margin: auto;
+	border-bottom: 1px solid #e7ac38;
+
+	text-align:center;
+}
+nav  ul {
+	display: inline-block;
+	/*bottom: 0;*/
+	margin: 0 auto;
+
+	padding:0;
+	list-style-type: none;
+	height:30px;
+	text-align:center;
+}
+
+nav  ul > li > div {
+	display: inline-block;
+	width:150px;
+	font-family: 'Mitr';
+	color:white;
+	text-align:center;
+	cursor: pointer;
+
+}
+
+nav  ul > li {
+	display:inline-block;
+	height:30px;
+	float: left;
+	border-bottom: 0px solid #e7ac38;
+	transition: border-bottom 0.2s ease-in;
+	color: #dadada;
+}
+
+nav  ul > li:hover{
+	color: #fff;
+	border-bottom: 2px solid #e7ac38;
+	/*background: linear-gradient(#e7ac38,#e7ac38);
+	background-repeat: no-repeat;
+	background-size:100% 5px;
+	background-position: bottom;
+	border-radius: 5px 5px 0 0;*/
+	transition: border-bottom 0.2s ease-in;
+}
