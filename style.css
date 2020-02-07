@@ -26,6 +26,7 @@ header {
 	width:100vw;
 	background-color:  #eaeced /*#0146ad; /* #0059b3; */;
 	position:fixed;
+	top: 0;
 	padding-left:30px;
 	padding-right:30px;
 	height: 160px;
@@ -37,16 +38,17 @@ main {
 	display: block;
 	overflow-x: hidden;
 	overflow-y: auto;
-
+	
 	width: 100vw;
-	height: 100vh;
+	height: calc(100vh - 200px);
 
 	color: #eaeced;
-
-
-	padding-top: 160px;
-	padding-bottom: 120px;
-
+	
+	
+	
+	margin-top: 160px;
+	margin-bottom: 40px;
+	
 	z-index: 0;
 }
 
@@ -114,10 +116,9 @@ section {
 	overflow-y: auto;
 	float:left;
 	width:100vw;
+	min-height: calc(100vh - 200px);
 	padding:50px;
 	padding-left: 120px;
-	margin-bottom: 120px;
-
 
 }
 section > .article {
