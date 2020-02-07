@@ -24,22 +24,23 @@ body {
 
 header {
 	width:100vw;
-	background-color:  #0146ad; /* #0059b3; */
+	background-color:  #eaeced /*#0146ad; /* #0059b3; */;
 	position:fixed;
 
 	height: 160px;
 	z-index: 1;
+	color: #254b61;
 }
 
 main {
 	display: block;
 	overflow-x: hidden;
-	overflow-y: scroll;
+	overflow-y: auto;
 
 	width: 100vw;
 	height: 100vh;
 
-	color: white;
+	color: #eaeced;
 
 
 	padding-top: 160px;
@@ -48,13 +49,19 @@ main {
 	z-index: 0;
 }
 
+
 footer {
 	border-top: 1px solid #e7ac38;
 	position:fixed;
 	width: 100%;
 	bottom: 0;
-	height: 120px;
+	height: 40px;
 	background: #efefef;
+	font-family:'Mitr';
+	font-weight: 200;
+	font-size: 0.7em;
+	line-height: 40px;
+	text-align: center;
 }
 
 header > table {
@@ -64,9 +71,13 @@ header > table {
 h1 {
 	margin: 0;
 	padding: 0;
-	color: white;
-	font-family: 'Mitr';
+	font-family: Arial, 'Mitr';
+	line-height: 1;
 	font-weight: 200;
+}
+
+h1 > span {
+	font-weight: bold;
 }
 
 .overflow-container{
@@ -140,7 +151,7 @@ nav  ul > li > div {
 	display: inline-block;
 	width:150px;
 	font-family: 'Mitr';
-	color:white;
+	color: #234F6A;
 	text-align:center;
 	cursor: pointer;
 
