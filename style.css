@@ -39,17 +39,17 @@ main {
 	display: block;
 	overflow-x: hidden;
 	overflow-y: auto;
-	
+
 	width: 100vw;
 	height: calc(100vh - 200px);
 
 	color: #eaeced;
-	
-	
-	
+
+
+
 	margin-top: 160px;
 	margin-bottom: 40px;
-	
+
 	z-index: 0;
 }
 
@@ -147,13 +147,12 @@ h2 {
 
 
 h2 > span{
-	background: linear-gradient(to right,#e7ac3845,#e7ac38)	;
+	display: inline-block;
+	background: linear-gradient(to right,rgba(231,172,56,0),rgba(231,172,56,0.5));
  	background-size: 0px 100%;
 	background-repeat: no-repeat;
 	transition: background-size 1s;
-	line-height: 1.1;
-	line-spacing: 0;
-	padding-bottom: 1px;
+	line-height: 1.5;
 	padding-right: 5px;
 }
 h2.gloom > span {
