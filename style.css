@@ -312,18 +312,16 @@ input[type="text"], textarea {
 }
 input[type="submit"] {
 	margin: 0 auto;
-	border: 0;
+	border: 1px solid #e7ac38;
 	padding: 6px;
 	display: block;
-	background: #e7ac38;
+	color:  #e7ac38;
+	background: transparent;
 	font-weight: bold;
 }
 
-/*input[type="text"].long-text {
-	background: white;
-	border: 0;
-	border-left: 2px solid #e7ac38;
-	color: black;
-	padding: 6px;
-	width: 200px;
-}*/
+input[type="submit"]:hover {
+	color:  white;
+	background: #e7ac38;
+	cursor: pointer;
+}
