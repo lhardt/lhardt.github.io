@@ -14,10 +14,12 @@
 			}
 
 			function start_slides(){
+				document.getElementById("overflow-container");
 				var all_slides = document.getElementsByTagName("section");
 				var h2 = document.getElementsByTagName("h2")[0];
 				for(var i = 0; i < all_slides.length; i++){
 					set_collapsed(all_slides[i], true);
+					all_slides[i].scroll(0,0);
 				}
 				h2.className += " gloom";
 				set_collapsed(all_slides[0],false);
@@ -83,9 +85,10 @@
 					<ul>
 						<li><div onclick="jump_to_slide(0)">Institucional</div></li>
 						<li><div onclick="jump_to_slide(1)">Serviços</div></li>
-						<li><div onclick="jump_to_slide(2)">Depoimentos</div></li>
-						<li><div onclick="jump_to_slide(3)">Clientes</div></li>
-						<li><div onclick="jump_to_slide(4)">Contato</div></li>
+						<li><div onclick="jump_to_slide(2)">Quem Somos</div></li>
+						<li><div onclick="jump_to_slide(3)">Depoimentos</div></li>
+						<li><div onclick="jump_to_slide(4)">Clientes</div></li>
+						<li><div onclick="jump_to_slide(5)">Contato</div></li>
 					</ul>
 			</nav>
 
@@ -93,12 +96,18 @@
 		<main>
 			<div class="overflow-container">
 				<section id="sect1">
-					<h2><span>Promover aos nossos clientes</span> <br><span>um foco na redução de custos</span><br><span>tributários e ganho de eficiência.</span></h2>
-					<span class="citation-author">— Diferencial Tributária</span>
+						<h2 style="clear: both;"><span>Promover aos nossos clientes</span> <br><span>um foco na redução de custos</span><br><span>tributários e ganho de eficiência.</span></h2>
+					<div class="left">
+						<span class="citation-author">— Diferencial Tributária</span>
 
-					<p> A Diferencial Tributária, fundada no início do ano de 2015, foi criada em função da necessidade identificada no mercado advinda da falta de atendimento às empresas de pequeno e médio porte, inclusive atuantes no comércio atacadista e varejista, pela maioria das grandes consultorias do mercado.</p>
+						<p> A Diferencial Tributária, fundada no início do ano de 2015, foi criada em função da necessidade identificada no mercado advinda da falta de atendimento às empresas de pequeno e médio porte, inclusive atuantes no comércio atacadista e varejista, pela maioria das grandes consultorias do mercado.</p>
 
-					<p>A empresa surgiu através da parceria formada entre dois profissionais com larga experiência no mercado de auditoria independente e consultoria tributária, possuindo vivência em mais de 15 anos nos mais variados segmentos empresariais ligadas a questões contábeis, fiscais e tributárias provindos de conceituadas empresas privadas e públicas. A alta complexidade do setor tributário no Brasil e a carência no atendimento a empresas de menor porte, acrescidas da larga experiência acumulada ao longo dos anos de todos os seus integrantes, motivou a criação da Diferencial Tributária proporcionando a nossos clientes atendimento de forma satisfatória e exclusiva.</p>
+						<p>A empresa surgiu através da parceria formada entre dois profissionais com larga experiência no mercado de auditoria independente e consultoria tributária, possuindo vivência em mais de 15 anos nos mais variados segmentos empresariais ligadas a questões contábeis, fiscais e tributárias provindos de conceituadas empresas privadas e públicas. A alta complexidade do setor tributário no Brasil e a carência no atendimento a empresas de menor porte, acrescidas da larga experiência acumulada ao longo dos anos de todos os seus integrantes, motivou a criação da Diferencial Tributária proporcionando a nossos clientes atendimento de forma satisfatória e exclusiva.</p>
+					</div>
+
+					<div class="right">
+
+					</div>
 				</section>
 
 				<section id="sect2">
@@ -125,6 +134,98 @@
 				</section>
 
 				<section>
+					<div>
+						<h2>Quem somos</h2>
+
+						<div class="person-div">
+							<img class="image" src="images/diretor.jpg">
+							<div class="image-caption">
+								<div id="description" class="hidden">
+									<p>
+										Diretor Administrativo, atua no mercado a mais de 8 anos como Auditor Independente. Exerce como Servidor Público Federal o cargo de Diretor/Auditor Fiscal junto a órgãos regulatórios. É Bacharel em Ciências Contábeis com especialização em Perícia e Auditoria pela Universidade Federal do Rio Grande do Sul cursando MBA em Gestão Tributária.
+									</p>
+									<div>
+										<span class="fa fa-whatsapp"></span>
+										9 9123 1239 |
+										<span class="fa fa-phone"></span>
+										3331 1133
+									</div>
+									<br>
+								</div>
+									<span class="desc_opener fa fa-angle-down  fa-lg fa-bold"></span>
+								<br>
+								<span>Vinicius Lima</span>
+								<br>Diretor administrativo.
+							</div>
+						</div>
+
+						<div class="person-div">
+							<img class="image" src="images/diretor.jpg">
+							<div class="image-caption">
+								<div id="description" class="hidden">
+									<p>
+										Diretor Administrativo, atua no mercado a mais de 8 anos como Auditor Independente. Exerce como Servidor Público Federal o cargo de Diretor/Auditor Fiscal junto a órgãos regulatórios. É Bacharel em Ciências Contábeis com especialização em Perícia e Auditoria pela Universidade Federal do Rio Grande do Sul cursando MBA em Gestão Tributária.
+									</p>
+									<div>
+										<span class="fa fa-whatsapp"></span>
+										9 9123 1239 |
+										<span class="fa fa-phone"></span>
+										3331 1133
+									</div>
+									<br>
+								</div>
+									<span class="desc_opener fa fa-angle-down  fa-lg fa-bold"></span>
+								<br>
+								<span>Vinicius Lima</span>
+								<br>Diretor administrativo.
+							</div>
+						</div>
+						<div class="person-div">
+							<img class="image" src="images/diretor.jpg">
+							<div class="image-caption">
+								<div id="description" class="hidden">
+									<p>
+										Diretor Administrativo, atua no mercado a mais de 8 anos como Auditor Independente. Exerce como Servidor Público Federal o cargo de Diretor/Auditor Fiscal junto a órgãos regulatórios. É Bacharel em Ciências Contábeis com especialização em Perícia e Auditoria pela Universidade Federal do Rio Grande do Sul cursando MBA em Gestão Tributária.
+									</p>
+									<div>
+										<span class="fa fa-whatsapp"></span>
+										9 9123 1239 |
+										<span class="fa fa-phone"></span>
+										3331 1133
+									</div>
+									<br>
+								</div>
+									<span class=" desc_opener fa fa-angle-down  fa-lg fa-bold"></span>
+								<br>
+								<span>Vinicius Lima</span>
+								<br>Diretor administrativo.
+							</div>
+						</div>
+						<div class="person-div">
+							<img class="image" src="images/diretor.jpg">
+							<div class="image-caption">
+								<div id="description" class="hidden">
+									<p>
+										Diretor Administrativo, atua no mercado a mais de 8 anos como Auditor Independente. Exerce como Servidor Público Federal o cargo de Diretor/Auditor Fiscal junto a órgãos regulatórios. É Bacharel em Ciências Contábeis com especialização em Perícia e Auditoria pela Universidade Federal do Rio Grande do Sul cursando MBA em Gestão Tributária.
+									</p>
+									<div>
+										<span class="fa fa-whatsapp"></span>
+										9 9123 1239 |
+										<span class="fa fa-phone"></span>
+										3331 1133
+									</div>
+									<br>
+								</div>
+									<span class=" desc_opener fa fa-angle-down  fa-lg fa-bold"></span>
+								<br>
+								<span>Vinicius Lima</span>
+								<br>Diretor administrativo.
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section>
 					<div >
 						<h2>Depoimentos</h2>
 						<p>Diferencial Tributária</p>
@@ -141,9 +242,21 @@
 				<section>
 					<div >
 						<h2>Contato</h2>
-						<p>Diferencial Tributária</p>
+						<div class="contact-div">
+							<label >Nome</label>
+							<input type="text" placeholder="Nome" class="nome"> </input>
+							<label >Telefone</label>
+							<input type="text" placeholder="Telefone" class="telefone"> </input>
+							<label >E-mail</label>
+							<input type="text" placeholder="E-mail" class="e-mail"> </input>
+							<label >Sua Mensagem</label>
+							<textarea placeholder="Sua mensagem" class="long-text"> </textarea>
+							<input type="submit" >
+						</div>
+						<!-- <input type="text" placeholder="Informação"> </input> -->
 					</div>
 				</section>
+
 
 				<div style="clear:both"></div>
 			</div>

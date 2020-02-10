@@ -2,6 +2,7 @@
 
 * {
 	box-sizing: border-box;
+	scroll-behaviour: smooth;
 }
 
 html {
@@ -145,6 +146,65 @@ h2 {
 	font-weight: 200;
 }
 
+.left {
+	float:left;
+}
+
+.right{
+	float: right;
+}
+
+.person-div {
+	width: 372px;
+	float:left;
+	margin: 5px;
+	min-height: 800px;
+}
+
+.person-div #description{
+	max-height: 0em;
+	transition: max-height 1s;
+	background:white;
+	border-bottom: 1px solid #e7ac38;
+	color: #101010;
+	margin-top: 0;
+	padding-left: 4px;
+	padding-right:4px;
+	overflow-y: hidden;
+}
+
+.person-div:hover #description{
+	max-height: 20em;
+	transition: max-height 1s;
+}
+
+
+.image {
+	border: 1px solid #e7ac38;
+	border-width: 1px 1px 2px 1px;
+	margin-bottom:0;
+
+	width: 372px;
+}
+
+.image-caption {
+	font-size: 0.9em;
+	font-family: 'Mitr';
+	font-weight: 300;
+	line-height: 1;
+	text-align: center;
+	width: 372px;
+}
+
+.person-div .desc_opener {
+	transform: rotate(0deg);
+	transition: transform 1s;
+	color: #e7ac38;
+}
+.person-div:hover .desc_opener {
+	transform: rotate(180deg);
+	transition: transform 1s;
+}
 
 h2 > span{
 	display: inline-block;
@@ -167,6 +227,24 @@ h2.gloom > span {
 	font-size: 0.8em;
 }
 
+.image-caption .fa:hover {
+	color:#e7ac38;
+}
+
+button {
+	background: transparent;
+    border-radius: 20%/50%;	color: #e7ac38;
+	border: 1px solid #e7ac38;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin: 5px;
+	font-weight: bold;
+}
+
+
+
 nav{
 	position: absolute;
 	bottom: 0;
@@ -180,7 +258,6 @@ nav{
 }
 nav  ul {
 	display: inline-block;
-	/*bottom: 0;*/
 	margin: 0 auto;
 
 	padding:0;
@@ -211,10 +288,42 @@ nav  ul > li {
 nav  ul > li:hover{
 	color: #fff;
 	border-bottom: 2px solid #e7ac38;
-	/*background: linear-gradient(#e7ac38,#e7ac38);
-	background-repeat: no-repeat;
-	background-size:100% 5px;
-	background-position: bottom;
-	border-radius: 5px 5px 0 0;*/
 	transition: border-bottom 0.2s ease-in;
 }
+
+div.contact-div{
+	width: 600px;
+}
+
+label{
+	font-family: 'Mitr';
+	font-size: 0.8em;
+}
+
+input[type="text"], textarea {
+	display: block;
+	background: white;
+	border: 0;
+	border-left: 2px solid #e7ac38;
+	color: black;
+	padding: 6px;
+	width: 600px;
+	margin-bottom: 10px;
+}
+input[type="submit"] {
+	margin: 0 auto;
+	border: 0;
+	padding: 6px;
+	display: block;
+	background: #e7ac38;
+	font-weight: bold;
+}
+
+/*input[type="text"].long-text {
+	background: white;
+	border: 0;
+	border-left: 2px solid #e7ac38;
+	color: black;
+	padding: 6px;
+	width: 200px;
+}*/
