@@ -18,14 +18,14 @@ body {
 	display:block;
 	overflow-x:hidden;
 	width: 100vw;
-	background:#142b5b;
+	background:linear-gradient(#204592, #0e1e3f);
 	overflow-y: hidden;
 
 }
 
 header {
 	width:100vw;
-	background-color:  #eaeced /*#0146ad; /* #0059b3; */;
+	background-color:  #eaeced;
 	position:fixed;
 	top: 0;
 	padding-left:30px;
