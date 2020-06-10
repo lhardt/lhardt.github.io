@@ -13,13 +13,14 @@ body {
 }
 
 .content-container{
-	max-width: 400px;
+	max-width: 500px;
 	margin: 15px auto;
 	padding-left: 15px;
 	padding-right:15px;
 }
 ul {
 	width: 80%;
+	max-width: 80vw;
 }
 
 .logo-center {
@@ -35,8 +36,15 @@ h1 {
 	font-weight: 300;
 	text-align: center;
 }
+.content-container > div {
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
 
 p {
+	max-width:400px;
+	margin: 0 auto;
+	margin-bottom: 10px;
 	text-align: center;
 }
 
@@ -46,13 +54,26 @@ ul {
 	padding-left: 0;
 	font-size: 0.9em;
 	margin: 0 auto;
-	margin-bottom: 20px;
 }
 li {
 	display:flex;
 	align-items: center;
+
 }
 
 li > div {
 	margin:5px;
+	word-wrap: normal;
+}
+
+@media (min-width: 500px) {
+	.content-container > div, ul {
+		margin: 0 auto;
+		width: 350px;
+		max-width: 350px;
+	}
+	li {
+		width: 350px;
+		max-width: 350px;
+	}
 }
