@@ -1,67 +1,380 @@
 <html>
 	<head>
-		<meta charset="utf-8" />
-		<title>DAM Serviços Empresariais</title>
-		<link rel="stylesheet" href="stylesheet.css">
-		<link rel="stylesheet" href="fa/css/font-awesome.css">
+		<title>Teste</title>
+		<link href="style.css" rel="stylesheet" type="text/css"/>
+		<meta charset="utf8" />
+		<script>
+			function set_collapsed(div, bool){
+				div.className = div.className.replace(" collapsed", "");
+				if(bool) {
+					div.className += " collapsed";
+				}
+			}
+
+			function start_slides(){
+				var all_slides = document.getElementsByClassName("slide");
+				for(var i = 0; i < all_slides.length; i++){
+					set_collapsed(all_slides[i], true);
+				}
+				set_collapsed(all_slides[0],false);
+			}
+
+			function jump_to_slide(n){
+				var slide_radio_ids = ["home","demos","loja", "projetos", "blog", "contato"];
+				document.getElementById(slide_radio_ids[n]).checked = true;
+				var all_slides = document.getElementsByClassName("slide");
+				for(var i = 0; i < all_slides.length; i++){
+					set_collapsed(all_slides[i], false);
+				}
+				var cont = document.getElementsByClassName("slide-container")[0];
+				cont.className = cont.className.replace(" translate", "");
+				cont.className += " translate";
+				cont.style.transform = "translateX(" + -100*n + "vw)";
+				setTimeout(finish_jump, 1000, n);
+			}
+
+			function finish_jump(n){
+				var all_slides = document.getElementsByClassName("slide");
+				for(var i = 0; i < all_slides.length; i++){
+					if(i != n){
+						set_collapsed(all_slides[i], true);
+					}
+				}
+				set_collapsed(all_slides[n], false);
+			}
+
+			function on_load(){
+				document.getElementById('home').checked=true;
+			}
+		</script>
 	</head>
-	<body>
-		<div class="content-container">
-			<img class="logo-center" src="logo.png">
-			<h1>Em Breve!</h1>
-			<p>
-				Nosso website está em construção.
-			 	Enquanto isso, sinta-se livre para nos contatar via e-mail ou telefone.
-			</p>
-			<div >
-				<ul>
-					<li>
-						<div>
-							<span class="fa-stack">
-								<i class="fa fa-square fa-stack-2x" style="transform:rotate(45deg); color: #03989e;"></i>
-								<i class="fa fa-at fa-stack-1x fa-inverse "></i>
-							</span>
+	<body onload="on_load()">
+		<header>
+			<h1>LMH</h1>
+			<ul>
+				<li class="selected">
+					<input id="home" name="menu-group" type="radio" checked="true"> <label for="home" onclick="jump_to_slide(0)">Home</label>
+				</li>
+				<li>
+					<input id="demos" name="menu-group" type="radio" onclick="jump_to_slide(1)"> <label for="demos">Demos</label>
+				</li>
+				<li>
+					<input id="loja" name="menu-group" type="radio" onclick="jump_to_slide(2)"> <label for="loja">Loja</label>
+				</li>
+				<li>
+					<input id="projetos" name="menu-group" type="radio" onclick="jump_to_slide(3)"> <label for="projetos">Projetos</label>
+				</li>
+				<li>
+					<input id="blog" name="menu-group" type="radio" onclick="jump_to_slide(4)"><label for="blog">Blog</label>
+				</li>
+				<li>
+					<input id="contato" name="menu-group" type="radio" onclick="jump_to_slide(5)"><label for="contato">Contato</label>
+				</li>
+				<li>
+					<input id="cv" name="menu-group" type="radio" ><label for="cv">CV</label>
+				</li>
+				<li><div class="language-icon">BR</div></li>
+			</ul>
+		</header>
+		<main>
+			<div class="slide-container">
+				<div class="slide">
+					<section class="dark">
+						<div class="big-circ">brasão</div>
+						<div class="big-text">
+							<h2>LMH Desenvolvimento de Software</h2>
+							<p>Novo no mercado. Pronto para deixar uma marca.</p>
+							<p>Software <div class="popup-on-hover" href="#"> premium
+									<div class="popup">a
+										<ul>
+											<li>Controle de Bugs</li>
+											<li>Internacionalização</li>
+											<li></li>
+										</ul>
+									</div>
+								</div> por encomenda a baixo custo.
+							</p>
 						</div>
-						<div>
-							contato@&#8203;damservicosempresariais.com.br
+					</section>
+					<section class="light">
+						<div class="content">
+							<h3>Seja bem-vindo ao nosso website.</h3>
+
+							<p>A missão da LMH é trazer software de qualidade por um baixo custo para um mercado em crescimento, beneficiando
+								a comunidade em geral. Sinta-se à vontade para entrar em contato conosco e solicitar um orçamento.
+							</p>
+
+							<div class="cards-container">
+								<div class="card">
+									<h3>Projetos</h3>
+									<div class="med-circ" style="background: #f3a0a0"> </div>
+									<p>Softwares projetados sob demanada para atender suas necessidades</p>
+									<a class="button-link" type="button" href="#" onclick="jump_to_slide(3)">Saiba Mais   »</a>
+								</div>
+								<div class="card">
+									<h3>Demos</h3>
+									<div class="med-circ" style="background: #a0a0f3"> </div>
+									<p>Não é necessário acreditar na qualidade do software. Veja por você mesmo.</p>
+									<a class="button-link" type="button" href="#" onclick="jump_to_slide(1)">Saiba Mais   »</a>
+								</div>
+								<div class="card">
+									<h3>Loja</h3>
+									<div class="med-circ" style="background: #a0f3a0"> </div>
+									<p>Programas de computador prontos para você logo de cara.</p>
+									<a class="button-link" type="button" href="#" onclick="jump_to_slide(2)">Saiba Mais   »</a>
+								</div>
+							</div>
+
+							<h3>Vantagens</h3>
+
+							<ul>
+								<li>Custo abaixo do mercado;</li>
+								<li>Qualidade comprovada;</li>
+								<li>Qualidade comprovada;</li>
+							</ul>
 						</div>
-					</li>
-					<li>
-						<div>
-							<span class="fa-stack">
-								<i class="fa fa-square fa-stack-2x" style="transform:rotate(45deg); color: #03989e;"></i>
-								<i class="fa fa-phone fa-stack-1x fa-inverse"></i>
-							</span>
+					</section>
+				</div>
+				<div class="slide">
+					<section class="dark">
+						<div class="big-circ">brasão</div>
+						<div class="big-text">
+							<h2>LMH - Demos</h2>
+							Veja as nossas demonstrações pré-prontas e originais. <br>
+							Podemos modificá-las rapidamente para suas necessidades.
 						</div>
-						<div>
-							(51) 9 9266 4668
+					</section>
+					<section class="light">
+						<div class="content">
+							<h3>Teste livremente nossas demonstrações.</h3>
+
+							<div class="cards-container">
+								<div class="card">
+									<h3>Loja On-line</h3>
+									<div class="med-circ" style="background: #f3a0a0"> </div>
+									<p>Acesse a loja virtual de nossa fictícia costureira $Nome, para todos os gostos.</p>
+									<input type="button" value="Saiba Mais	 »"></input>
+								</div>
+								<div class="card">
+									<h3>Anotador</h3>
+									<div class="med-circ" style="background: #a0a0f3"> </div>
+									<p>Faça suas anotações e as organize por cor, data e até mesmo pasta.</p>
+									<input type="button" value="Saiba Mais	 »"></input>
+								</div>
+								<div class="card">
+									<h3>Jogo</h3>
+									<div class="med-circ" style="background: #a0f3a0"> </div>
+									<p>Um jogo onde um personagem deve chegar a uma bandeira para vencer.</p>
+									<input type="button" value="Saiba Mais	 »"></input>
+								</div>
+							</div>
 						</div>
-					</li>
-					<li>
-						<div>
-							<span class="fa-stack">
-								<i class="fa fa-square fa-stack-2x" style="transform:rotate(45deg); color: #03989e;"></i>
-								<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-							</span>
+					</section>
+				</div>
+				<div class="slide">
+					<section class="dark">
+						<div class="big-circ">brasão</div>
+						<div class="big-text">
+							<h2>LMH - Loja</h2>
+							> Lorem ipsum dolor sit amet consecteur adiscipling elit. <br>
+							> Lorem ipsum dolor sit amet <a href="#"> consecteur adiscipling</a> elit. <br>
+							> Lorem ipsum dolor sit amet consecteur adiscipling elit. <br>
 						</div>
-						<div>
-							<a href="https://facebook.com/damservicosempresariais">facebook.com&#8203;/damservicosempresariais</a>
+					</section>
+					<section class="light">
+						<div class="content">
+							<h3>Já temos o que você procura?</h3>
+
+							<p>A missão da LMH é trazer software de qualidade por um baixo custo para um mercado em crescimento, beneficiando
+								a comunidade em geral. Sinta-se à vontade para entrar em contato conosco e solicitar um orçamento.
+							</p>
+
+							<div class="cards-container">
+								<div id="minerva-card" class="card expanded">
+									<h3>Minerva</h3>
+									<div class="med-circ" style="background: #f3a0a0"> </div>
+									<p>Software de Escalonamento de Grade Horária.</p>
+									<div class="center-bold">R$ 100,00</div>
+									<input type="button" value="Saiba Mais	 »"></input>
+								</div>
+								<div class="card">
+									<h3>Biblio???</h3>
+									<div class="med-circ" style="background: #a0a0f3"> </div>
+									<p>Software para bibliotecas<br> ????</p>
+									<div class="center-bold">R$ 80,00</div>
+									<input type="button" value="Saiba Mais	 »"></input>
+								</div>
+								<div class="card">
+									<h3>Gerador de Questionários</h3>
+									<div class="med-circ" style="background: #a0f3a0"> </div>
+									<p>Gera Questionários em PDF<br>Uso pessoal ou profissional</p>
+									<div class="center-bold">R$ 50 / R$ 300,00</div>
+									<input type="button" value="Saiba Mais	 »"></input>
+								</div>
+							</div>
+
+							<h3>Vantagens</h3>
+
+							<ul>
+								<li>Custo abaixo do mercado;</li>
+								<li>Qualidade comprovada;</li>
+								<li>Qualidade comprovada;</li>
+							</ul>
 						</div>
-					</li>
-					<li>
-						<div>
-							<span class="fa-stack">
-								<i class="fa fa-square fa-stack-2x" style="transform:rotate(45deg); color: #03989e;"></i>
-								<i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-							</span>
+					</section>
+				</div>
+				<div class="slide">
+					<section class="dark">
+						<div class="big-circ">brasão</div>
+						<div class="big-text">
+							<h2>LMH - Projetos</h2>
+							> Lorem ipsum dolor sit amet consecteur adiscipling elit. <br>
+							> Lorem ipsum dolor sit amet <a href="#"> consecteur adiscipling</a> elit. <br>
+							> Lorem ipsum dolor sit amet consecteur adiscipling elit. <br>
 						</div>
-						<div>
-							<a href="https://linkedin.com/company/damservicosempresariais">linkedin.com/&#8203;company/&#8203;damservicosempresariais</a>
+					</section>
+					<section class="light">
+						<div class="content">
+							<h3>Faça sua encomenda.</h3>
+
+							<p>A missão da LMH é trazer software de qualidade por um baixo custo para um mercado em crescimento, beneficiando
+								a comunidade em geral. Sinta-se à vontade para entrar em contato conosco e solicitar um orçamento.
+							</p>
+
+							<div class="cards-container">
+								<div class="card">
+									<h3>Projetos</h3>
+									<div class="med-circ" style="background: #f3a0a0"> </div>
+									<p>Softwares projetados sob demanada para atender suas necessidades</p>
+									<input type="button" value="Saiba Mais	 »"></input>
+								</div>
+								<div class="card">
+									<h3>Demos</h3>
+									<div class="med-circ" style="background: #a0a0f3"> </div>
+									<p>Não é necessário acreditar na qualidade do software. Veja por você mesmo.</p>
+									<input type="button" value="Saiba Mais	 »"></input>
+								</div>
+								<div class="card">
+									<h3>Loja</h3>
+									<div class="med-circ" style="background: #a0f3a0"> </div>
+									<p>Programas de computador prontos para você logo de cara.</p>
+									<input type="button" value="Saiba Mais	 »"></input>
+								</div>
+							</div>
+
+							<h3>Vantagens</h3>
+
+							<ul>
+								<li>Custo abaixo do mercado;</li>
+								<li>Qualidade comprovada;</li>
+								<li>Qualidade comprovada;</li>
+							</ul>
 						</div>
-					</li>
-				</ul>
+					</section>
+				</div>
+				<div class="slide">
+					<section class="dark">
+						<div class="big-circ">brasão</div>
+						<div class="big-text">
+							<h2>LMH - Blog</h2>
+							> Lorem ipsum dolor sit amet consecteur adiscipling elit. <br>
+							> Lorem ipsum dolor sit amet <a href="#"> consecteur adiscipling</a> elit. <br>
+							> Lorem ipsum dolor sit amet consecteur adiscipling elit. <br>
+						</div>
+					</section>
+					<section class="light">
+						<div class="content">
+							<h3>Veja nossos últimos <i>posts</i>.</h3>
+
+							<p>A missão da LMH é trazer software de qualidade por um baixo custo para um mercado em crescimento, beneficiando
+								a comunidade em geral. Sinta-se à vontade para entrar em contato conosco e solicitar um orçamento.
+							</p>
+
+							<div class="cards-container">
+								<div class="card">
+									<h3>Projetos</h3>
+									<div class="med-circ" style="background: #f3a0a0"> </div>
+									<p>Softwares projetados sob demanada para atender suas necessidades</p>
+									<input type="button" value="Saiba Mais	 »"></input>
+								</div>
+								<div class="card">
+									<h3>Demos</h3>
+									<div class="med-circ" style="background: #a0a0f3"> </div>
+									<p>Não é necessário acreditar na qualidade do software. Veja por você mesmo.</p>
+									<input type="button" value="Saiba Mais	 »"></input>
+								</div>
+								<div class="card">
+									<h3>Loja</h3>
+									<div class="med-circ" style="background: #a0f3a0"> </div>
+									<p>Programas de computador prontos para você logo de cara.</p>
+									<input type="button" value="Saiba Mais	 »"></input>
+								</div>
+							</div>
+
+							<h3>Vantagens</h3>
+
+							<ul>
+								<li>Custo abaixo do mercado;</li>
+								<li>Qualidade comprovada;</li>
+								<li>Qualidade comprovada;</li>
+							</ul>
+						</div>
+					</section>
+				</div>
+				<div class="slide">
+					<section class="dark">
+						<div class="big-circ">brasão</div>
+						<div class="big-text">
+							<h2>LMH - Contato</h2>
+							> Lorem ipsum dolor sit amet consecteur adiscipling elit. <br>
+							> Lorem ipsum dolor sit amet <a href="#"> consecteur adiscipling</a> elit. <br>
+							> Lorem ipsum dolor sit amet consecteur adiscipling elit. <br>
+						</div>
+					</section>
+					<section class="light">
+						<div class="content">
+							<h3>Sinta-se à vontade para entrar em contato.</h3>
+
+							<p>A missão da LMH é trazer software de qualidade por um baixo custo para um mercado em crescimento, beneficiando
+								a comunidade em geral. Sinta-se à vontade para entrar em contato conosco e solicitar um orçamento.
+							</p>
+
+							<div class="cards-container">
+								<div class="card">
+									<h3>Projetos</h3>
+									<div class="med-circ" style="background: #f3a0a0"> </div>
+									<p>Softwares projetados sob demanada para atender suas necessidades</p>
+									<input type="button" value="Saiba Mais	 »"></input>
+								</div>
+								<div class="card">
+									<h3>Demos</h3>
+									<div class="med-circ" style="background: #a0a0f3"> </div>
+									<p>Não é necessário acreditar na qualidade do software. Veja por você mesmo.</p>
+									<input type="button" value="Saiba Mais	 »"></input>
+								</div>
+								<div class="card">
+									<h3>Loja</h3>
+									<div class="med-circ" style="background: #a0f3a0"> </div>
+									<p>Programas de computador prontos para você logo de cara.</p>
+									<input type="button" value="Saiba Mais	 »"></input>
+								</div>
+							</div>
+
+							<h3>Vantagens</h3>
+
+							<ul>
+								<li>Custo abaixo do mercado;</li>
+								<li>Qualidade comprovada;</li>
+								<li>Qualidade comprovada;</li>
+							</ul>
+						</div>
+					</section>
+				</div>
 			</div>
-			<p>Agradecemos a visita!<p>
-		</div>
+		</main>
+		<footer>
+			Copyright (C) Léo Hardt. 2020
+		</footer>
+
 	</body>
 </html>
