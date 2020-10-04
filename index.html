@@ -43,6 +43,19 @@
 				set_collapsed(all_slides[n], false);
 			}
 
+			function switch_expand_card(card_id) {
+				var all_cards = document.getElementsByClassName("card");
+				var card = document.getElementById(card_id);
+				var should_expand = !(card.className.includes(" expanded"));
+				for(var i = 0; i < all_cards.length; ++i){
+						all_cards[i].className = all_cards[i].className.replace(" expanded", "");
+				}
+				if(should_expand === true){
+					console.log("Expanding.\n");
+					card.className += " expanded";
+				}
+			}
+
 			function on_load(){
 				document.getElementById('home').checked=true;
 			}
@@ -149,23 +162,68 @@
 							<h3>Teste livremente nossas demonstrações.</h3>
 
 							<div class="cards-container">
-								<div class="card">
-									<h3>Loja On-line</h3>
-									<div class="med-circ" style="background: #f3a0a0"> </div>
-									<p>Acesse a loja virtual de nossa fictícia costureira $Nome, para todos os gostos.</p>
-									<input type="button" value="Saiba Mais	 »"></input>
+								<div class="card" id="shop-card">
+									<div class="left">
+										<h3>Loja On-line</h3>
+										<div class="med-circ" style="background: #f3a0a0"> </div>
+										<p>Acesse a loja virtual de nossa fictícia costureira $Nome, para todos os gostos.</p>
+										<button onclick="switch_expand_card('shop-card')">Saiba Mais	 »</button>
+									</div>
+									<div class="right">
+										<h4>Descrição</h4>
+										<p class="long-description">
+											A missão da LMH é trazer software de qualidade por um baixo custo para um mercado em crescimento, beneficiando a comunidade em geral. Sinta-se à vontade para entrar em contato conosco e solicitar um orçamento.
+										</p>
+										<h4>Screenshots</h4>
+										<div class="img-list">
+											<div class="img-placeholder"></div>
+											<div class="img-placeholder"></div>
+											<div class="img-placeholder"></div>
+										</div>
+										<button>Testar	 »</button>
+									</div>
 								</div>
-								<div class="card">
-									<h3>Anotador</h3>
-									<div class="med-circ" style="background: #a0a0f3"> </div>
-									<p>Faça suas anotações e as organize por cor, data e até mesmo pasta.</p>
-									<input type="button" value="Saiba Mais	 »"></input>
+								<div class="card" id="note-card">
+									<div class="left">
+										<h3>Anotador</h3>
+										<div class="med-circ" style="background: #a0a0f3"> </div>
+										<p>Faça suas anotações e as organize por cor, data e até mesmo pasta.</p>
+										<button  onclick="switch_expand_card('note-card')">Saiba Mais	 »</button>
+									</div>
+									<div class="right">
+										<h4>Descrição</h4>
+										<p class="long-description">
+											A missão da LMH é trazer software de qualidade por um baixo custo para um mercado em crescimento, beneficiando a comunidade em geral. Sinta-se à vontade para entrar em contato conosco e solicitar um orçamento.
+										</p>
+										<h4>Screenshots</h4>
+										<div class="img-list">
+											<div class="img-placeholder"></div>
+											<div class="img-placeholder"></div>
+											<div class="img-placeholder"></div>
+										</div>
+										<button>Testar	 »</button>
+									</div>
 								</div>
-								<div class="card">
-									<h3>Jogo</h3>
-									<div class="med-circ" style="background: #a0f3a0"> </div>
-									<p>Um jogo onde um personagem deve chegar a uma bandeira para vencer.</p>
-									<input type="button" value="Saiba Mais	 »"></input>
+								<div class="card" id="game-card">
+									<div class="left">
+										<h3>Jogo</h3>
+										<div class="med-circ" style="background: #a0f3a0"> </div>
+										<p>Um jogo em que um personagem deve chegar a uma bandeira para vencer.</p>
+										<button onclick="switch_expand_card('game-card')">Saiba Mais	 »</button>
+									</div>
+									<div class="right">
+										<h4>Descrição</h4>
+										<p class="long-description">
+											A missão da LMH é trazer software de qualidade por um baixo custo para um mercado em crescimento, beneficiando a comunidade em geral. Sinta-se à vontade para entrar em contato conosco e solicitar um orçamento.
+										</p>
+										<h4>Screenshots</h4>
+										<div class="img-list">
+											<div class="img-placeholder"></div>
+											<div class="img-placeholder"></div>
+											<div class="img-placeholder"></div>
+										</div>
+										<button>Testar	 »</button>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -195,21 +253,21 @@
 									<div class="med-circ" style="background: #f3a0a0"> </div>
 									<p>Software de Escalonamento de Grade Horária.</p>
 									<div class="center-bold">R$ 100,00</div>
-									<input type="button" value="Saiba Mais	 »"></input>
+									<input id="not-shop-radio" name="cards-radio" class="radio-button" type="radio" value=""><label for="not-shop-radio" >Saiba Mais	 »</label>
 								</div>
 								<div class="card">
 									<h3>Biblio???</h3>
 									<div class="med-circ" style="background: #a0a0f3"> </div>
 									<p>Software para bibliotecas<br> ????</p>
 									<div class="center-bold">R$ 80,00</div>
-									<input type="button" value="Saiba Mais	 »"></input>
+									<input id="not-shop-radio" name="cards-radio" class="radio-button" type="radio" value=""><label for="not-shop-radio" >Saiba Mais	 »</label>
 								</div>
 								<div class="card">
 									<h3>Gerador de Questionários</h3>
 									<div class="med-circ" style="background: #a0f3a0"> </div>
 									<p>Gera Questionários em PDF<br>Uso pessoal ou profissional</p>
 									<div class="center-bold">R$ 50 / R$ 300,00</div>
-									<input type="button" value="Saiba Mais	 »"></input>
+									<input id="not-shop-radio" name="cards-radio" class="radio-button" type="radio" value=""><label for="not-shop-radio" >Saiba Mais	 »</label>
 								</div>
 							</div>
 
@@ -246,19 +304,19 @@
 									<h3>Projetos</h3>
 									<div class="med-circ" style="background: #f3a0a0"> </div>
 									<p>Softwares projetados sob demanada para atender suas necessidades</p>
-									<input type="button" value="Saiba Mais	 »"></input>
+									<input id="not-shop-radio" name="cards-radio" class="radio-button" type="radio" value=""><label for="not-shop-radio" >Saiba Mais	 »</label>
 								</div>
 								<div class="card">
 									<h3>Demos</h3>
 									<div class="med-circ" style="background: #a0a0f3"> </div>
 									<p>Não é necessário acreditar na qualidade do software. Veja por você mesmo.</p>
-									<input type="button" value="Saiba Mais	 »"></input>
+									<input id="not-shop-radio" name="cards-radio" class="radio-button" type="radio" value=""><label for="not-shop-radio" >Saiba Mais	 »</label>
 								</div>
 								<div class="card">
 									<h3>Loja</h3>
 									<div class="med-circ" style="background: #a0f3a0"> </div>
 									<p>Programas de computador prontos para você logo de cara.</p>
-									<input type="button" value="Saiba Mais	 »"></input>
+									<input id="not-shop-radio" name="cards-radio" class="radio-button" type="radio" value=""><label for="not-shop-radio" >Saiba Mais	 »</label>
 								</div>
 							</div>
 
@@ -295,19 +353,19 @@
 									<h3>Projetos</h3>
 									<div class="med-circ" style="background: #f3a0a0"> </div>
 									<p>Softwares projetados sob demanada para atender suas necessidades</p>
-									<input type="button" value="Saiba Mais	 »"></input>
+									<input id="not-shop-radio" name="cards-radio" class="radio-button" type="radio" value=""><label for="not-shop-radio" >Saiba Mais	 »</label>
 								</div>
 								<div class="card">
 									<h3>Demos</h3>
 									<div class="med-circ" style="background: #a0a0f3"> </div>
 									<p>Não é necessário acreditar na qualidade do software. Veja por você mesmo.</p>
-									<input type="button" value="Saiba Mais	 »"></input>
+									<input id="not-shop-radio" name="cards-radio" class="radio-button" type="radio" value=""><label for="not-shop-radio" >Saiba Mais	 »</label>
 								</div>
 								<div class="card">
 									<h3>Loja</h3>
 									<div class="med-circ" style="background: #a0f3a0"> </div>
 									<p>Programas de computador prontos para você logo de cara.</p>
-									<input type="button" value="Saiba Mais	 »"></input>
+									<input id="not-shop-radio" name="cards-radio" class="radio-button" type="radio" value=""><label for="not-shop-radio" >Saiba Mais	 »</label>
 								</div>
 							</div>
 
@@ -344,19 +402,19 @@
 									<h3>Projetos</h3>
 									<div class="med-circ" style="background: #f3a0a0"> </div>
 									<p>Softwares projetados sob demanada para atender suas necessidades</p>
-									<input type="button" value="Saiba Mais	 »"></input>
+									<input id="not-shop-radio" name="cards-radio" class="radio-button" type="radio" value=""><label for="not-shop-radio" >Saiba Mais	 »</label>
 								</div>
 								<div class="card">
 									<h3>Demos</h3>
 									<div class="med-circ" style="background: #a0a0f3"> </div>
 									<p>Não é necessário acreditar na qualidade do software. Veja por você mesmo.</p>
-									<input type="button" value="Saiba Mais	 »"></input>
+									<input id="not-shop-radio" name="cards-radio" class="radio-button" type="radio" value=""><label for="not-shop-radio" >Saiba Mais	 »</label>
 								</div>
 								<div class="card">
 									<h3>Loja</h3>
 									<div class="med-circ" style="background: #a0f3a0"> </div>
 									<p>Programas de computador prontos para você logo de cara.</p>
-									<input type="button" value="Saiba Mais	 »"></input>
+									<input id="not-shop-radio" name="cards-radio" class="radio-button" type="radio" value=""><label for="not-shop-radio" >Saiba Mais	 »</label>
 								</div>
 							</div>
 
