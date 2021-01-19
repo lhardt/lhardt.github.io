@@ -23,8 +23,14 @@
 				width: 130px;
 				height: 130px;
 			}
-			button {
+			a.button {
 				display: block;	
+
+				-webkit-appearance: button;
+    				-moz-appearance: button;
+				appearance: button;
+				text-decoration: none;
+
 				width: 300px;
 				background: black;
 				color: white;
@@ -41,8 +47,8 @@
 
 				font-weight: 700;	
 			}
-			button:focus {outline:0;}
-			button:hover{
+			a.button:focus {outline:0;}
+			a.button:hover{
 				background: white;
 				border-color: white;
 				color: black;
@@ -59,15 +65,16 @@
 				margin: 10px;
 				display: block;
 			}
+
 			@media screen and (max-width:1023px ) {
 				h1 { font-size: 5rem; margin: 5px; }
-				button {
+				a.button {
 
 					width: 100%;
 					//border-radius: 100px;
 					border-width: 0.4rem;
 					display: block;
-					font-size: 1.7rem;
+					font-size: 1.3rem;
 					
 				}
 				p { font-size: 1.5rem; margin-bottom: 3rem; }
@@ -86,9 +93,8 @@
 			<h1>Oca Tupi Brasil</h1>
 			<p>Receita Original, Sabor do Brasil</p>
 		</header>
-		<button>Visite nosso Website</button>
-		<button>Faça seu Pedido</button>
-
-		<button>Veja nosso Whatsapp</button>
+		<a class="button" href="https://www.ocatupi.com.br/">Visite nosso Website</a>
+		<a class="button" href="https://www.ifood.com.br/delivery/canoas-rs/oca-tupi-brasil-niteroi/b21bdd0e-3aee-4790-ae3a-47dacae96069">Faça seu Pedido</a>
+		<a class="button" href="https://api.whatsapp.com/send?phone=5551999416440">Veja nosso Whatsapp</a>
 		<p class="footer-text" >Copyright (C) Oca Tupi Brasil. 2021</p>
 	</body>
