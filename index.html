@@ -1,461 +1,425 @@
-<html lang="pt">
+<!DOCTYPE html>
+<html lang="en"><!--<![endif]-->
 	<head>
-		<title>Teste</title>
- 		<link rel="alternate" hreflang="de" href="index.de.html">
- 		<link href="style.css" rel="stylesheet" type="text/css"/>
-		<meta charset="utf8" />
-		<script>
-			function set_collapsed(div, bool){
-				div.className = div.className.replace(" collapsed", "");
-				if(bool) {
-					div.className += " collapsed";
-				}
-			}
-
-			function start_slides(){
-				var all_slides = document.getElementsByClassName("slide");
-				for(var i = 0; i < all_slides.length; i++){
-					set_collapsed(all_slides[i], true);
-				}
-				set_collapsed(all_slides[0],false);
-			}
-
-			function jump_to_slide(n){
-				var slide_radio_ids = ["home","demos","loja", "blog", "contato"];
-				document.getElementById(slide_radio_ids[n]).checked = true;
-				var all_slides = document.getElementsByClassName("slide");
-				for(var i = 0; i < all_slides.length; i++){
-					set_collapsed(all_slides[i], false);
-				}
-				var cont = document.getElementsByClassName("slide-container")[0];
-				cont.className = cont.className.replace(" translate", "");
-				cont.className += " translate";
-				cont.style.transform = "translateX(" + -100*n + "vw)";
-				setTimeout(finish_jump, 1000, n);
-			}
-
-			function finish_jump(n){
-				var all_slides = document.getElementsByClassName("slide");
-				for(var i = 0; i < all_slides.length; i++){
-					if(i != n){
-						set_collapsed(all_slides[i], true);
-					}
-				}
-				set_collapsed(all_slides[n], false);
-			}
-
-			function switch_expand_card(card_id) {
-				var all_cards = document.getElementsByClassName("card");
-				var card = document.getElementById(card_id);
-				var should_expand = !(card.className.includes(" expanded"));
-				for(var i = 0; i < all_cards.length; ++i){
-						all_cards[i].className = all_cards[i].className.replace(" expanded", "");
-				}
-				if(should_expand === true){
-					console.log("Expanding.\n");
-					card.className += " expanded";
-				}
-			}
-
-			function on_load(){
-				document.getElementById('home').checked=true;
-			}
-		</script>
+		<meta charset="utf-8">
+		<!--- basic page needs ================================================== -->
+		<title>OCA TUPI BRASIL</title>
+		<meta name="description" content=""><meta name="author" content="">
+		<!-- mobile specific metas ================================================== -->
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <!-- CSS ================================================== -->
+		<link href="css/base.css" rel="stylesheet" />
+		<link href="css/vendor.css" rel="stylesheet" />
+		<link href="css/main.css" rel="stylesheet" />
+		<!-- script ================================================== -->
+	    <script src="js/modernizr.js"></script><script src="js/pace.min.js"></script>
+	    <!-- favicons ================================================== -->
+		<link href="ocaicon.ico" rel="shortcut icon" type="image/x-icon" />
+		<link href="ocaicon.ico" rel="icon" type="image/x-icon" />
 	</head>
-	<body onload="on_load()">
-		<header>
-			<h1>LMH</h1>
-			<ul>
-				<li class="selected">
-					<input id="home" name="menu-group" type="radio" checked="true"> <label for="home" onclick="jump_to_slide(0)">Home</label>
-				</li>
-				<li>
-					<input id="demos" name="menu-group" type="radio" onclick="jump_to_slide(1)"> <label for="demos">Demos</label>
-				</li>
-				<li>
-					<input id="loja" name="menu-group" type="radio" onclick="jump_to_slide(2)"> <label for="loja">Loja</label>
-				</li>
-				<li>
-					<input id="blog" name="menu-group" type="radio" onclick="jump_to_slide(3)"><label for="blog">Blog</label>
-				</li>
-				<li>
-					<input id="contato" name="menu-group" type="radio" onclick="jump_to_slide(4)"><label for="contato">Contato</label>
-				</li>
-				<li>
-					<input id="cv" name="menu-group" type="radio" ><label for="cv">CV</label>
-				</li>
-				<li>
-					<div class="language-picker">
-						<div class="language-icon active-language">PT</div>
-						<ul>
-							<li>
-								<a href="index.html?lang=en">
-									<div class="language-icon active-language">EN</div>
-								</a>
-							</li>
-							<li>
-								<a href="index.html?lang=de">
-									<div class="language-icon active-language">DE</div>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</li>
-			</ul>
+	<body id="top">
+		<!-- header ================================================== -->
+		<header class="s-header">
+			<div class="header-logo">
+				<a class="site-logo" href="index.html">
+					<img alt="Homepage" src="images/logo.png" />
+				</a>
+			</div>
+
+			<nav class="header-nav">
+				<a class="header-nav__close" href="#0" title="close">
+					<span>Close</span>
+				</a>
+
+				<div class="header-nav__content">
+					<h3>Navegue aqui</h3>
+
+					<ul class="header-nav__list">
+						<li class="current"><a class="smoothscroll" href="#home" title="home">Home</a></li>
+						<li><a class="smoothscroll" href="#about" title="about">A OCA</a></li>
+						<li><a class="smoothscroll" href="#services" title="services">PRODUTOS</a></li>
+						<li><a href="catalogo_ocatupi.pdf" target="_blank" title="works">CAT&Aacute;LOGO</a></li>
+						<li><a class="smoothscroll" href="#clients" title="clients">CLIENTES</a></li>
+						<li><a class="smoothscroll" href="#contact" title="contact">CONTATO</a></li>
+						<li><a class="smoothscroll" href="langs.html" title="contact">LANGUAGES</a></li>
+					</ul>
+
+					<p>OCA TUPI BRASIL<br />
+					Receita Original, Sabor do Brasil.</p>
+
+					<ul class="header-nav__social">
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+			</nav>
+			<a class="header-menu-toggle" href="#0">
+				<span class="header-menu-text">Menu</span>
+				<span class="header-menu-icon"></span>
+			</a>
+			<a class="header-lang-toggle" href="langs.html">
+				<div class="lang-icon">
+
+				</div>
+			</a>
 		</header>
-		<main>
-			<div class="slide-container">
-				<div class="slide">
-					<section class="dark">
-						<div class="big-circ">brasão</div>
-						<div class="big-text">
-							<h2>LMH Desenvolvimento de Software</h2>
-							<p>Lorem ipsum dolor sit amet.</p>
-							<p>Software premium de prateleira ou por encomenda a um baixo custo. </p>
-						</div>
-					</section>
-					<section class="light">
-						<div class="content">
-							<h3>Seja bem-vindo ao nosso website.</h3>
 
-							<p>A missão da LMH é trazer software de qualidade por um baixo custo para um mercado em crescimento, beneficiando
-								a comunidade em geral. Sinta-se à vontade para entrar em contato e solicitar um orçamento.
-							</p>
+		<section class="s-home target-section" data-image-src="images/hero-bg.jpg" data-natural-height="2000" data-natural-width="3000" data-parallax="scroll" data-position-y="center" id="home">
+			<div class="overlay"></div>
 
-							<div class="cards-container">
-								<div class="card">
-									<h3>Projetos</h3>
-									<div class="med-circ" style="background: #f3a0a0"> </div>
-									<p>Softwares projetados sob demanada para atender suas necessidades</p>
-									<a class="button-link" type="button" href="#" onclick="jump_to_slide(3)">Saiba Mais   »</a>
-								</div>
-								<div class="card">
-									<h3>Demos</h3>
-									<div class="med-circ" style="background: #a0a0f3"> </div>
-									<p>Não é necessário acreditar na qualidade do software. Veja por você mesmo.</p>
-									<a class="button-link" type="button" href="#" onclick="jump_to_slide(1)">Saiba Mais   »</a>
-								</div>
-								<div class="card">
-									<h3>Loja</h3>
-									<div class="med-circ" style="background: #a0f3a0"> </div>
-									<p>Programas de computador prontos para você logo de cara.</p>
-									<a class="button-link" type="button" href="#" onclick="jump_to_slide(2)">Saiba Mais   »</a>
-								</div>
-							</div>
+			<div class="shadow-overlay"></div>
 
-							<h3>Vantagens</h3>
+			<div class="home-content">
+				<div class="row home-content__main">
+					<h3>Ol&aacute;, Seja Bem vindo ao nosso Website</h3>
 
-							<ul>
-								<li>Custo abaixo do mercado;</li>
-								<li>Qualidade comprovada;</li>
-								<li>Qualidade comprovada;</li>
-							</ul>
-						</div>
-					</section>
+					<h1>Procurando por<br />
+					alimenta&ccedil;&atilde;o saud&aacute;vel<br />
+					e produtos originais<br />
+					com sabor brasileiro?</h1>
+
+					<div class="home-content__buttons"><a class="smoothscroll btn btn--stroke" href="#about">Saiba Mais </a></div>
 				</div>
-				<div class="slide">
-					<section class="dark">
-						<div class="big-circ">brasão</div>
-						<div class="big-text">
-							<h2>LMH - Demos</h2>
-							Veja as nossas demonstrações pré-prontas e originais. <br>
-							Podemos modificá-las rapidamente para suas necessidades.
-						</div>
-					</section>
-					<section class="light">
-						<div class="content">
-							<h3>Teste livremente nossas demonstrações.</h3>
-							<p>Estes são programas que podem ser customizados. Se estiver interessado, por favor, entre em contato.</p>
-							<div class="cards-container">
-								<div class="card" id="shop-card">
-									<div class="left">
-										<h3>Loja On-line</h3>
-										<div class="med-circ" style="background: #f3a0a0"> </div>
-										<p>Acesse a loja virtual de nossa fictícia costureira $Nome, para todos os gostos.</p>
-										<button onclick="switch_expand_card('shop-card')">Saiba Mais	 »</button>
-									</div>
-									<div class="right">
-										<h4>Descrição</h4>
-										<p class="long-description">
-											A missão da LMH é trazer software de qualidade por um baixo custo para um mercado em crescimento, beneficiando a comunidade em geral. Sinta-se à vontade para entrar em contato conosco e solicitar um orçamento.
-										</p>
-										<h4>Screenshots</h4>
-										<div class="img-list">
-											<div class="img-placeholder"></div>
-											<div class="img-placeholder"></div>
-											<div class="img-placeholder"></div>
-										</div>
-										<button>Testar	 »</button>
-									</div>
-								</div>
-								<div class="card" id="note-card">
-									<div class="left">
-										<h3>Anotador</h3>
-										<div class="med-circ" style="background: #a0a0f3"> </div>
-										<p>Faça suas anotações e as organize por cor, data e até mesmo pasta.</p>
-										<button  onclick="switch_expand_card('note-card')">Saiba Mais	 »</button>
-									</div>
-									<div class="right">
-										<h4>Descrição</h4>
-										<p class="long-description">
-											A missão da LMH é trazer software de qualidade por um baixo custo para um mercado em crescimento, beneficiando a comunidade em geral. Sinta-se à vontade para entrar em contato conosco e solicitar um orçamento.
-										</p>
-										<h4>Screenshots</h4>
-										<div class="img-list">
-											<div class="img-placeholder"></div>
-											<div class="img-placeholder"></div>
-											<div class="img-placeholder"></div>
-										</div>
-										<button>Testar	 »</button>
-									</div>
-								</div>
-								<div class="card" id="game-card">
-									<div class="left">
-										<h3>Jogo</h3>
-										<div class="med-circ" style="background: #a0f3a0"> </div>
-										<p>Um jogo em que um personagem deve chegar a uma bandeira para vencer.</p>
-										<button onclick="switch_expand_card('game-card')">Saiba Mais	 »</button>
-									</div>
-									<div class="right">
-										<h4>Descrição</h4>
-										<p class="long-description">
-											A missão da LMH é trazer software de qualidade por um baixo custo para um mercado em crescimento, beneficiando a comunidade em geral. Sinta-se à vontade para entrar em contato conosco e solicitar um orçamento.
-										</p>
-										<h4>Screenshots</h4>
-										<div class="img-list">
-											<div class="img-placeholder"></div>
-											<div class="img-placeholder"></div>
-											<div class="img-placeholder"></div>
-										</div>
-										<button>Testar	 »</button>
-									</div>
-								</div>
-								<div class="card" id="game-card">
-									<div class="left">
-										<h3>Chatbot</h3>
-										<div class="med-circ" style="background: #a0f3a0"> </div>
-										<p>Chatbot como o do enem.</p>
-										<button onclick="switch_expand_card('game-card')">Saiba Mais	 »</button>
-									</div>
-									<div class="right">
-										<h4>Descrição</h4>
-										<p class="long-description">
-											A missão da LMH é trazer software de qualidade por um baixo custo para um mercado em crescimento, beneficiando a comunidade em geral. Sinta-se à vontade para entrar em contato conosco e solicitar um orçamento.
-										</p>
-										<h4>Screenshots</h4>
-										<div class="img-list">
-											<div class="img-placeholder"></div>
-											<div class="img-placeholder"></div>
-											<div class="img-placeholder"></div>
-										</div>
-										<button>Testar	 »</button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
+
+				<div class="home-content__scroll">
+					<a class="scroll-link smoothscroll" href="#about">
+						<span>Role para baixo</span>
+					</a>
 				</div>
-				<div class="slide">
-					<section class="dark">
-						<div class="big-circ">brasão</div>
-						<div class="big-text">
-							<h2>LMH - Loja</h2>
-							Estes são nossos programas prontos para uso, sem, a princípio, necessitar de nenhuma alteração. <br>
-							> Lorem ipsum dolor sit amet <a href="#"> consecteur adiscipling</a> elit. <br>
-							> Lorem ipsum dolor sit amet consecteur adiscipling elit. <br>
-						</div>
-					</section>
-					<section class="light">
-						<div class="content">
-							<h3>Já temos o que você procura?</h3>
 
-							<p>A missão da LMH é trazer software de qualidade por um baixo custo para um mercado em crescimento, beneficiando
-								a comunidade em geral. Sinta-se à vontade para entrar em contato conosco e solicitar um orçamento.
-							</p>
+				<div class="home-content__line"></div>
+			</div>
+			<ul class="home-social">
+				<li><a href="https://www.facebook.com/ocatupibrasil"><span>Facebook</span></a></li>
+				<li><a href="https://www.instagram.com/ocatupibrasil/"><span>Instagram</span></a></li>
+			</ul>
+		</section>
 
-							<div class="cards-container">
-								<div id="minerva-card" class="card">
-									<div class="left">
-										<h3>Minerva</h3>
-										<div class="med-circ" style="background: #f3a0a0"> </div>
-										<p>Software de Escalonamento de Grade Horária.</p>
-										<div class="center-bold">R$ 100,00</div>
-										<button  onclick="switch_expand_card('minerva-card')">Saiba Mais	 »</button>
-									</div>
-									<div class="right">
-										<h4>Descrição</h4>
-										<p class="long-description">
-											A missão da LMH é trazer software de qualidade por um baixo custo para um mercado em crescimento, beneficiando a comunidade em geral. Sinta-se à vontade para entrar em contato conosco e solicitar um orçamento.
-										</p>
-										<h4>Screenshots</h4>
-										<div class="img-list">
-											<div class="img-placeholder"></div>
-											<div class="img-placeholder"></div>
-											<div class="img-placeholder"></div>
-										</div>
-										<button>Ver Demo	 »</button>
-										<button>Comprar	 »</button>
-									</div>
-								</div>
-								<div class="card" id="biblio-card">
-									<div class="left">
-										<h3>Biblio???</h3>
-										<div class="med-circ" style="background: #a0a0f3"> </div>
-										<p>Software para bibliotecas<br> ????</p>
-										<div class="center-bold">R$ 80,00</div>
-										<button  onclick="switch_expand_card('biblio-card')">Saiba Mais	 »</button>
-									</div>
-									<div class="right">
-										<h4>Descrição</h4>
-										<p class="long-description">
-											A missão da LMH é trazer software de qualidade por um baixo custo para um mercado em crescimento, beneficiando a comunidade em geral. Sinta-se à vontade para entrar em contato conosco e solicitar um orçamento.
-										</p>
-										<h4>Screenshots</h4>
-										<div class="img-list">
-											<div class="img-placeholder"></div>
-											<div class="img-placeholder"></div>
-											<div class="img-placeholder"></div>
-										</div>
-										<button>Testar	 »</button>
-									</div>
-								</div>
-								<div class="card" id="questio-card">
-									<div class="left">
-										<h3>Questio???</h3>
-										<div class="med-circ" style="background: #a0f3a0"> </div>
-										<p>Gera Questionários em PDF<br>Uso pessoal ou profissional</p>
-										<div class="center-bold">R$ 50 / R$ 300,00</div>
-										<button onclick="switch_expand_card('questio-card')">Saiba Mais	 »</button>
-									</div>
-									<div class="right">
-										<h4>Descrição</h4>
-										<p class="long-description">
-											A missão da LMH é trazer software de qualidade por um baixo custo para um mercado em crescimento, beneficiando a comunidade em geral. Sinta-se à vontade para entrar em contato conosco e solicitar um orçamento.
-										</p>
-										<h4>Screenshots</h4>
-										<div class="img-list">
-											<div class="img-placeholder"></div>
-											<div class="img-placeholder"></div>
-											<div class="img-placeholder"></div>
-										</div>
-										<button>Testar	 »</button>
-									</div>
-								</div>
-							</div>
+		<section class="s-about" id="about">
+			<div class="row section-header has-bottom-sep" data-aos="fade-up">
+				<div class="col-full">
+					<h3 class="subhead subhead--dark">PRAZER</h3>
 
-							<h3>Vantagens</h3>
-
-							<ul>
-								<li>Custo abaixo do mercado;</li>
-								<li>Qualidade comprovada;</li>
-								<li>Qualidade comprovada;</li>
-							</ul>
-						</div>
-					</section>
-				</div>
-				<div class="slide">
-					<section class="dark">
-						<div class="big-circ">brasão</div>
-						<div class="big-text">
-							<h2>LMH - Blog</h2>
-							> Lorem ipsum dolor sit amet consecteur adiscipling elit. <br>
-							> Lorem ipsum dolor sit amet <a href="#"> consecteur adiscipling</a> elit. <br>
-							> Lorem ipsum dolor sit amet consecteur adiscipling elit. <br>
-						</div>
-					</section>
-					<section class="light">
-						<div class="content">
-							<h3>Veja nossos últimos <i>posts</i>.</h3>
-
-							<p>A missão da LMH é trazer software de qualidade por um baixo custo para um mercado em crescimento, beneficiando
-								a comunidade em geral. Sinta-se à vontade para entrar em contato conosco e solicitar um orçamento.
-							</p>
-
-							<div class="cards-container">
-								<div class="card">
-									<h3>Projetos</h3>
-									<div class="med-circ" style="background: #f3a0a0"> </div>
-									<p>Softwares projetados sob demanada para atender suas necessidades</p>
-									<input id="not-shop-radio" name="cards-radio" class="radio-button" type="radio" value=""><label for="not-shop-radio" >Saiba Mais	 »</label>
-								</div>
-								<div class="card">
-									<h3>Demos</h3>
-									<div class="med-circ" style="background: #a0a0f3"> </div>
-									<p>Não é necessário acreditar na qualidade do software. Veja por você mesmo.</p>
-									<input id="not-shop-radio" name="cards-radio" class="radio-button" type="radio" value=""><label for="not-shop-radio" >Saiba Mais	 »</label>
-								</div>
-								<div class="card">
-									<h3>Loja</h3>
-									<div class="med-circ" style="background: #a0f3a0"> </div>
-									<p>Programas de computador prontos para você logo de cara.</p>
-									<input id="not-shop-radio" name="cards-radio" class="radio-button" type="radio" value=""><label for="not-shop-radio" >Saiba Mais	 »</label>
-								</div>
-							</div>
-
-							<h3>Vantagens</h3>
-
-							<ul>
-								<li>Custo abaixo do mercado;</li>
-								<li>Qualidade comprovada;</li>
-								<li>Qualidade comprovada;</li>
-							</ul>
-						</div>
-					</section>
-				</div>
-				<div class="slide">
-					<section class="dark">
-						<div class="big-circ">brasão</div>
-						<div class="big-text">
-							<h2>LMH - Contato</h2>
-							> Lorem ipsum dolor sit amet consecteur adiscipling elit. <br>
-							> Lorem ipsum dolor sit amet <a href="#"> consecteur adiscipling</a> elit. <br>
-							> Lorem ipsum dolor sit amet consecteur adiscipling elit. <br>
-						</div>
-					</section>
-					<section class="light">
-						<div class="content">
-							<h3>Sinta-se à vontade para entrar em contato.</h3>
-
-							<p>A missão da LMH é trazer software de qualidade por um baixo custo para um mercado em crescimento, beneficiando
-								a comunidade em geral. Sinta-se à vontade para entrar em contato conosco e solicitar um orçamento.
-							</p>
-
-							<div class="cards-container">
-								<div class="card">
-									<h3>Projetos</h3>
-									<div class="med-circ" style="background: #f3a0a0"> </div>
-									<p>Softwares projetados sob demanada para atender suas necessidades</p>
-									<input id="not-shop-radio" name="cards-radio" class="radio-button" type="radio" value=""><label for="not-shop-radio" >Saiba Mais	 »</label>
-								</div>
-								<div class="card">
-									<h3>Demos</h3>
-									<div class="med-circ" style="background: #a0a0f3"> </div>
-									<p>Não é necessário acreditar na qualidade do software. Veja por você mesmo.</p>
-									<input id="not-shop-radio" name="cards-radio" class="radio-button" type="radio" value=""><label for="not-shop-radio" >Saiba Mais	 »</label>
-								</div>
-								<div class="card">
-									<h3>Loja</h3>
-									<div class="med-circ" style="background: #a0f3a0"> </div>
-									<p>Programas de computador prontos para você logo de cara.</p>
-									<input id="not-shop-radio" name="cards-radio" class="radio-button" type="radio" value=""><label for="not-shop-radio" >Saiba Mais	 »</label>
-								</div>
-							</div>
-
-							<h3>Vantagens</h3>
-
-							<ul>
-								<li>Custo abaixo do mercado;</li>
-								<li>Qualidade comprovada;</li>
-								<li>Qualidade comprovada;</li>
-							</ul>
-						</div>
-					</section>
+					<h1 class="display-1 display-1--light">SOMOS A OCA TUPI BRASIL</h1>
 				</div>
 			</div>
-		</main>
+				<!-- end section-header -->
+
+			<div class="row about-desc" data-aos="fade-up">
+				<div class="col-full">
+					<p>A Oca Tupi inicia sua jornada com um sonho de conquistar diferentes pessoas, em diferentes locais, com um produto de sabor original e inconfund&iacute;vel. A Goma de Mandioca hidratada (Farinha de Tapioca), &eacute; produzida de forma artesanal, tornando o sabor e a qualidade incompar&aacute;veis. Nosso P&atilde;o de Queijo possui um sabor incr&iacute;vel. Experimente nossos Escondidinhos e nossos Caldinhos. Consuma alimentos naturais e sem conservantes. <b>Oca Tupi Brasil. Receita Original, Sabor do Brasil.</b></p>
+					<div class="col-full">
+						<p><a class="btn full-width" href="https://youtu.be/A1GFLxNNLqI" target="_blank">Clique e veja nosso v&iacute;deo</a></p>
+					</div>
+				</div>
+			</div>
+			<!-- end about-desc -->
+
+			<div class="about__line"></div>
+		</section>
+
+		<section class="s-services" id="services">
+			<div class="row section-header has-bottom-sep" data-aos="fade-up">
+				<div class="col-full">
+					<h3 class="subhead">Conhe&ccedil;a nossos produtos</h3>
+
+					<h1 class="display-2">Receita Original,<br />
+					Sabor do Brasil</h1>
+				</div>
+			</div>
+
+			<div class="row services-list block-1-2 block-tab-full">
+				<div class="col-block service-item" data-aos="fade-up">
+					<div class="service-icon"></div>
+					<div class="service-text"><img src="images/portfolio/goma.jpg" />
+						<h3 class="h2">Goma de Tapioca</h3>
+
+						<p>Distribui&ccedil;&atilde;o de Goma de Tapioca para tapiocarias e restaurantes. Sem Conservantes. Produto congelado. Sem Gl&uacute;ten.</p>
+						<a class="btn btn--stroke full-width" href="pagina_goma.html">Veja mais</a>
+					</div>
+				</div>
+
+				<div class="col-block service-item" data-aos="fade-up">
+					<div class="service-icon"></div>
+
+					<div class="service-text"><img src="images/portfolio/tapioca.jpg" />
+						<h3 class="h2">Farinha de Tapioca</h3>
+
+						<p>Massa pronta para tapioca. Recheie com seus ingredientes preferidos. Sem conservantes. Produto congelado. Sem Gl&uacute;ten.</p>
+						<a class="btn btn--stroke full-width" href="pagina_tapioca.html">Veja mais</a>
+					</div>
+				</div>
+
+				<div class="col-block service-item" data-aos="fade-up">
+					<div class="service-icon"></div>
+
+					<div class="service-text"><img src="images/portfolio/paodequeijo.jpg" />
+						<h3 class="h2">P&atilde;o de Queijo</h3>
+
+						<p>O P&atilde;o de Queijo Oca Tupi &eacute; diferenciado e feito com f&eacute;cula de mandioca. Produto sem conservantes e sem gl&uacute;tem. Produto congelado.</p>
+						<a class="btn btn--stroke full-width" href="pagina_paodequeijo.html">Veja mais</a>
+					</div>
+				</div>
+
+				<div class="col-block service-item" data-aos="fade-up">
+					<div class="service-icon"></div>
+
+					<div class="service-text"><img src="images/portfolio/escondidinho.jpg" />
+						<h3 class="h2">Escondidinhos</h3>
+
+						<p>Possuimos diversos sabores de Escondidinhos. Frango, Carne de Sol, Entrecot, Entrevero, Camar&atilde;o, Salm&atilde;o e Vegetariano. Produto congelado e sem conservantes.</p>
+						<a class="btn btn--stroke full-width" href="pagina_escondidinhos.html">Veja mais</a>
+					</div>
+				</div>
+
+				<div class="col-block service-item" data-aos="fade-up">
+					<div class="service-icon"></div>
+
+					<div class="service-text"><img src="images/portfolio/caldinho.jpg" />
+						<h3 class="h2">Caldos</h3>
+
+						<p>Experimente nossos Caldos. Sabores Moranga Caboti&aacute; com Gorgonzola, e Caldo de Frango. Produto congelado e sem conservantes.</p>
+						<a class="btn btn--stroke full-width" href="pagina_caldos.html">Veja mais</a>
+					</div>
+				</div>
+
+				<div class="col-block service-item" data-aos="fade-up">
+					<div class="service-icon"></div>
+
+					<div class="service-text"><img src="images/portfolio/recheio_saco.jpg" />
+					<h3 class="h2">Recheios</h3>
+
+					<p>Distribuimos os recheios para tapiocarias e restaurantes. Temos uma vasta linha de recheios. Consulte os sabores. Produto congelado e sem conservantes.</p>
+					<a class="btn btn--stroke full-width" href="pagina_recheios.html">Veja mais</a></div>
+				</div>
+			</div>
+		</section>
+
+		<section class="s-about1" id="catalogo">
+			<div class="row section-header has-bottom-sep" data-aos="fade-up">
+				<div class="row section-header" data-aos="fade-up">
+					<div class="col-full"></div>
+				</div>
+
+				<div class="col-full"><img src="images/catalogo.jpg" />
+					<h3 class="subhead subhead--dark"></h3>
+
+					<h1 class="display-1 display-1--light">Veja nosso cat&aacute;logo de produtos</h1>
+				</div>
+			</div>
+
+			<div class="row about-desc" data-aos="fade-up">
+				<div class="col-full">
+					<p><a class="btn btn--primary full-width" href="catalogo_ocatupi.pdf" target="_blank">Clique aqui para visualizar</a></p>
+				</div>
+			</div>
+			<!-- end about-desc --><!-- end about-stats -->
+
+			<div class="about__line"></div>
+		</section>
+		<!-- end s-about --><!-- clients
+		    ================================================== -->
+
+		<section class="s-clients" id="clients">
+			<div class="row section-header" data-aos="fade-up">
+				<div class="col-full">
+				<h3 class="subhead">Nossos Clientes</h3>
+
+				<h1 class="display-2">Mais que Clientes,<br />
+				nosso motivo de orgulho</h1>
+				</div>
+			</div>
+			<div class="row clients-outer" data-aos="fade-up">
+				<div class="col-full">
+					<div class="clients">
+						<a class="clients__slide" href="#0" title=""><img src="images/clients/01.png" /></a> <a class="clients__slide" href="#0" title=""><img src="images/clients/11.png" /></a> <a class="clients__slide" href="#0" title=""><img src="images/clients/02.png" /></a> <a class="clients__slide" href="#0" title=""><img src="images/clients/04.png" /></a> <a class="clients__slide" href="#0" title=""><img src="images/clients/05.png" /></a> <a class="clients__slide" href="#0" title=""><img src="images/clients/06.png" /></a> <a class="clients__slide" href="#0" title=""><img src="images/clients/07.png" /></a> <a class="clients__slide" href="#0" title=""><img src="images/clients/08.png" /></a> <a class="clients__slide" href="#0" title=""><img src="images/clients/09.png" /></a> <a class="clients__slide" href="#0" title=""><img src="images/clients/10.png" /></a> <a class="clients__slide" href="#0" title=""><img src="images/clients/11.png" /></a> <a class="clients__slide" href="#0" title=""><img src="images/clients/12.png" /></a> <a class="clients__slide" href="#0" title=""><img src="images/clients/13.png" /></a> <a class="clients__slide" href="#0" title=""><img src="images/clients/14.png" /></a> <a class="clients__slide" href="#0" title=""><img src="images/clients/15.png" /></a> <a class="clients__slide" href="#0" title=""><img src="images/clients/16.png" /></a> <a class="clients__slide" href="#0" title=""><img src="images/clients/17.png" /></a> <a class="clients__slide" href="#0" title=""><img src="images/clients/18.png" /></a> <a class="clients__slide" href="#0" title=""><img src="images/clients/19.png" /></a> <a class="clients__slide" href="#0" title=""><img src="images/clients/20.png" /></a> <a class="clients__slide" href="#0" title=""><img src="images/clients/21.png" /></a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="s-contact" id="contact">
+			<div class="overlay"></div>
+
+			<div class="contact__line"></div>
+
+			<div class="row section-header" data-aos="fade-up">
+				<div class="col-full">
+					<h3 class="subhead">Contate-nos</h3>
+
+					<h1 class="display-2 display-2--light">A Oca Tupi Brasil est&aacute; pronta para lhe atender.</h1>
+				</div>
+			</div>
+
+			<div class="row contact-content" data-aos="fade-up">
+				<div class="contact-primary">
+					<h3 class="h6">Envie sua mensagem</h3>
+
+					<form action="" id="contactForm" method="post" name="contactForm" novalidate="">
+						<fieldset>
+							<div class="form-field">
+								<input aria-required="true" class="full-width" id="contactName" minlength="2" name="contactName" placeholder="Seu Nome" required="" type="text" value="" />
+							</div>
+
+							<div class="form-field">
+								<input aria-required="true" class="full-width" id="contactEmail" name="contactEmail" placeholder="Seu Email" required="" type="email" value="" />
+							</div>
+
+							<div class="form-field">
+								<input class="full-width" id="contactSubject" name="contactSubject" placeholder="Assunto" type="text" value="" />
+							</div>
+
+							<div class="form-field">
+								<textarea aria-required="true" class="full-width" cols="50" id="contactMessage" name="contactMessage" placeholder="Sua Mensagem" required="" rows="10">
+
+								</textarea>
+							</div>
+
+							<div class="form-field">
+								<button class="full-width btn--primary">Enviar</button>
+
+								<div class="submit-loader">
+									<div class="text-loader">Enviando...</div>
+
+									<div class="s-loader">
+										<div class="bounce1"></div>
+
+										<div class="bounce2"></div>
+
+										<div class="bounce3"></div>
+									</div>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+
+					<div class="message-warning">Algo deu errado. Por favor, tente novamente.</div>
+
+					<div class="message-success">Sua mensagem foi enviada, obrigado!</div>
+				</div>
+
+
+				<div class="contact-secondary">
+					<div class="contact-info">
+						<h3 class="h6 hide-on-fullwidth">Contato</h3>
+
+						<div class="cinfo">
+							<h5>Onde estamos</h5>
+
+							<p>Rua Rodrigues Alves, 132<br />
+							Niter&oacute;i - Canoas - RS<br />
+							92130-430</p>
+						</div>
+
+						<div class="cinfo">
+							<h5>Email</h5>
+
+							<p>sac@ocatupi.com.br<br />
+							comercial@ocatupi.com.br</p>
+						</div>
+
+						<div class="cinfo">
+							<h5>Telefones</h5>
+
+							<p>Fixo: (51) 3785.3200</p>
+						</div>
+
+						<ul class="contact-social">
+							<li></li>
+							<li></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- end s-contact --><!-- footer
+		    ================================================== -->
+
 		<footer>
-			Copyright (C) Léo Hardt. 2020
+			<div class="row footer-main">
+				<dixv class="col-six tab-full left footer-desc">
+					<div class="footer-logo"></div>
+					Oferecemos produtos aliment&iacute;cios de qualidade, com um sabor &uacute;nico, proporcionando uma vida mais pr&aacute;tica e saud&aacute;vel &agrave;s pessoas para atender as necessidades aliment&iacute;cias dos nossos clientes, oferecendo os melhores pratos com muita praticidade. Conhe&ccedil;a nossa linha de produtos e nosso card&aacute;pio. Foco nas refei&ccedil;&otilde;es pr&aacute;ticas, deliciosas e nutritivas.
+				</div>
+
+				<div class="col-six tab-full right footer-subscribe">
+					<h4>Baixe nosso Cat&aacute;logo de Produtos</h4>
+
+					<p>Tenha em m&atilde;os as informa&ccedil;&otilde;es da Empresa e dos produtos fabricados pela Oca Tupi Brasil.</p>
+					<img src="images/cat.png" /> <a class="btn btn--stroke full-width" href="catalogo_ocatupi.pdf" target="_blank">Clique aqui para visualizar</a>
+				</div>
+			</div>
+
+			<div class="row footer-bottom">
+				<div class="col-twelve">
+					<div class="copyright">
+						<span>&copy; Copyright Oca Tupi Brasil</span>
+						<span>Desenvolvimento: <a href="https://www.gritoempresarial.com.br/">Grito Empresarial</a></span>
+					</div>
+					<div class="go-top"></div>
+				</div>
+			</div>
 		</footer>
 
+		<div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+			<div class="pswp__bg"></div>
+
+			<div class="pswp__scroll-wrap">
+				<div class="pswp__container">
+					<div class="pswp__item"></div>
+
+					<div class="pswp__item"></div>
+
+					<div class="pswp__item"></div>
+				</div>
+
+				<div class="pswp__ui pswp__ui--hidden">
+					<div class="pswp__top-bar">
+						<div class="pswp__counter"></div>
+						<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+						<button class="pswp__button pswp__button--share" title="Share"></button>
+
+						<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+						<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+						<div class="pswp__preloader">
+							<div class="pswp__preloader__icn">
+								<div class="pswp__preloader__cut">
+									<div class="pswp__preloader__donut"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+						<div class="pswp__share-tooltip"></div>
+					</div>
+					<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button><button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+					<div class="pswp__caption">
+						<div class="pswp__caption__center"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="preloader">
+			<div id="loader">
+				<div class="line-scale-pulse-out">
+					<div></div>
+
+					<div></div>
+
+					<div></div>
+
+					<div></div>
+
+					<div></div>
+				</div>
+			</div>
+		</div>
+		<!-- Java Script
+		    ================================================== --><script src="js/jquery-3.2.1.min.js"></script><script src="js/plugins.js"></script><script src="js/main.js"></script>
 	</body>
 </html>

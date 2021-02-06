@@ -1,0 +1,140 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Oca Tupi Brasil</title>
+		<link rel="stylesheet" href="fa/css/font-awesome.css">
+		<script>
+			function hasClass(element, className) {
+				return (' ' + element.className + ' ').indexOf(' ' + className+ ' ') > -1;
+			}
+
+			function openMore(){
+				var element = document.getElementById('more-sect');
+				if(hasClass(element, 'closed')){ 	
+					element.classList.remove('closed');
+					document.getElementById('close-more-sect').style.display = 'block';
+					document.getElementById('open-more-sect').style.display = 'none';
+				} else { 
+					element.classList.add('closed');
+					document.getElementById('close-more-sect').style.display = 'none';
+					document.getElementById('open-more-sect').style.display = 'block';
+				}
+			}
+		</script>
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+		
+			* {
+				box-sizing: border-box; 
+			}
+			body { 
+				background: black; 
+				color: white; 
+				font-family: 'Montserrat', sans-serif;
+				text-align: center;
+				padding: 30px;
+			}
+			h1 {
+				display: block;
+				margin: 10px;
+				font-weight: 600;
+				font-size: 2rem;
+			}
+			img { 
+				width: 130px;
+				height: 130px;
+			}
+	
+			.closed {
+				display: none;
+			}
+			a {
+				color: white;
+			}
+			a.button {
+				display: block;	
+
+				-webkit-appearance: button;
+    				-moz-appearance: button;
+				appearance: button;
+				text-decoration: none;
+
+				width: 300px;
+				background: black;
+				color: white;
+				border: 2px solid white;
+				transition: all 0.3s ease;
+				padding: 10px;
+				padding-top: 1.2rem;
+				padding-bottom: 1.2rem;
+				margin: 0px auto;
+				margin-top: 1.2rem;
+				margin-bottom: 1.2rem;
+				text-transform: uppercase;
+				letter-spacing: 0.1rem;
+
+				font-weight: 700;	
+			}
+			a.button:focus {outline:0;}
+			a.button:hover{
+				background: white;
+				border-color: white;
+				color: black;
+				cursor: pointer;	
+			}
+			.footer-text {
+				color: #aaa;
+				font-style: italic;
+				font-size: 0.8em;
+				font-weight: 600;
+			}
+			p { 
+				font-weight: 600;
+				margin: 10px;
+				display: block;
+			}
+
+			a.underlined{
+				font-style: italic;
+				text-decoration: underline;
+			}
+
+			@media screen and (max-width:1023px ) {
+				h1 { font-size: 5rem; margin: 5px; }
+				a.button {
+
+					width: 100%;
+					//border-radius: 100px;
+					border-width: 0.4rem;
+					display: block;
+					font-size: 1.3rem;
+					
+				}
+				p { font-size: 1.5rem; margin-bottom: 3rem; }
+				p.footer-text { font-size: 1.5rem; }
+
+				img { 
+					width: initial;
+					height: initial;
+				}
+				
+			}
+		</style>
+	<head>
+	<body>
+		<header>
+			<img src="logo-oca.png" />
+			<h1>Oca Tupi Brasil</h1>
+			<p>Receita Original, Sabor do Brasil</p>
+		</header>
+		<a class="button" href="http://www.ocatupi.com.br/">Visite nosso Website</a>
+		<a class="button" href="https://www.ifood.com.br/delivery/canoas-rs/oca-tupi-brasil-niteroi/b21bdd0e-3aee-4790-ae3a-47dacae96069">Faça seu Pedido</a>
+		<a class="button" href="https://api.whatsapp.com/send?phone=5551999416440">Veja nosso Whatsapp</a>
+		<a id="open-more-sect" class="underlined" href="#" onclick="return openMore()">Mais<i class="fa fa-angle-bottom"></i></span></a>
+		<a id="close-more-sect" style="display:none" class="underlined" href="#" onclick="return openMore()">Menos<i class="fa fa-angle-top"></i></span></a>
+		<div id="more-sect" class="closed" >
+			<a class="button" href="#">Conheça nosso Blog</a>
+			<a class="button" href="#">Assine nosso Newsletter</a>
+		</div>
+		<p class="footer-text" >Copyright (C) Oca Tupi Brasil. 2021</p>
+	</body>
